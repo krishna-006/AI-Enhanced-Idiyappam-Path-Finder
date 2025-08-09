@@ -41,6 +41,7 @@ def index():
                 strand_lengths = [round(x,2) for x in lengths_px]
     return render_template('index.html', original_image=original_image, output_image=output_image, strand_lengths=strand_lengths)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if _name_ == "_main_":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
